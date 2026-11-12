@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#101b2a">
+  <title>Além do Visor — Aventura em Pixel Art</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><div class="brand"><span class="brand-icon">✦</span><div><b>ALÉM DO VISOR</b><small>UMA AVENTURA EM PIXELS</small></div></div><div class="top-right"><span class="pixel-tag">PIXEL ART · 320 × 180</span><button id="helpBtn" class="icon-btn" aria-label="Ajuda">?</button></div></header>
+    <section class="game-frame" aria-label="Jogo">
+      <canvas id="game" width="320" height="180" aria-label="Mundo do jogo em pixel art"></canvas>
+      <div id="toast" class="toast"></div>
+      <div class="hud-top"><div class="hud-chip"><span>♥</span><div class="health-track"><i id="healthFill"></i></div></div><div class="hud-chip day-chip">☼ <span id="dayLabel">DIA 1</span></div></div>
+      <div class="hud-bottom"><div class="location"><i></i><span id="locationLabel">PRADO DO DESPERTAR</span></div><button id="inventoryBtn" class="small-button">▣ MOCHILA <kbd>I</kbd></button><button id="craftBtn" class="small-button">⚒ CONSTRUIR <kbd>C</kbd></button></div>
+      <div id="interactHint" class="interact-hint">CLIQUE PARA INTERAGIR</div>
+      <div id="dialogue" class="dialogue hidden"><div class="speaker" id="speaker">ENZO</div><div id="dialogueText"></div><button id="dialogueNext" class="dialogue-next">CONTINUAR <span>▶</span></button></div>
+      <div id="inventoryPanel" class="panel hidden"><button class="panel-close" data-close>×</button><h2>MOCHILA</h2><p class="panel-sub">Tudo que você encontrou nesta aventura.</p><div id="inventoryGrid" class="inventory-grid"></div><div id="statsLine" class="stats-line"></div></div>
+      <div id="craftPanel" class="panel hidden"><button class="panel-close" data-close>×</button><h2>BANCADA DE CRIAÇÃO</h2><p class="panel-sub">Reúna materiais e construa seu novo lar.</p><div id="recipeList" class="recipe-list"></div></div>
+      <div id="objective" class="objective"><span class="objective-mark">✦</span><div><small>MISSÃO ATUAL</small><b id="objectiveText">Siga as instruções</b></div></div>
+      <div id="startScreen" class="screen-overlay"><div class="start-card"><div class="eyebrow">UMA JORNADA ENTRE DOIS MUNDOS</div><h1>ALÉM<br><em>DO VISOR</em></h1><p>Um garoto. Um mundo mágico.<br>Uma aventura para encontrar o caminho de volta.</p><button id="startBtn" class="primary-button">▶ &nbsp; COMEÇAR A AVENTURA</button><div class="controls-note">WASD / SETAS para andar &nbsp; • &nbsp; CLIQUE para interagir</div></div></div>
+      <div id="endingScreen" class="screen-overlay hidden"><div class="start-card ending-card"><div class="eyebrow">FIM DA AVENTURA</div><h1>DE VOLTA<br><em>A CASA</em></h1><p>“O meu Deus, finalmente estou aqui de novo!”</p><div class="ending-stat" id="endingStats"></div><button id="restartBtn" class="primary-button">↻ &nbsp; JOGAR NOVAMENTE</button></div></div>
+    </section>
+    <footer class="footer"><span>UM MUNDO FEITO DE CORAGEM <i>✦</i></span><span id="controlFooter">WASD / SETAS <b>·</b> CLIQUE PARA AÇÃO <b>·</b> I MOCHILA</span></footer>
+  </main>
+  <div id="touchControls" class="touch-controls"><div class="dpad"><button data-dir="up">▲</button><div><button data-dir="left">◀</button><button data-dir="down">▼</button><button data-dir="right">▶</button></div></div><button id="touchAction" class="touch-action">✦</button></div>
+  <script src="game.js"></script>
+</body>
+</html>
